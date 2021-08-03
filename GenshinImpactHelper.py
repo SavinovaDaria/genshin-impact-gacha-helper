@@ -31,7 +31,7 @@ path = os.getcwd()
 file_path = r'C:\Users\{}\AppData\LocalLow\miHoYo\Genshin Impact\output_log.txt'.format(environ_username)
 setting_path = path + '\\settings.ini'
 
-payload = dict()
+payload = {}
 new_url = 'https://raw.githubusercontent.com/satan007/genshin-impact-gacha-helper/main/version'
 req = http.request('GET', new_url, fields=payload)
 version_download = req.data.decode("UTF-8")
