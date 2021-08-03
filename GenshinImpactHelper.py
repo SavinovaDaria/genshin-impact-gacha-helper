@@ -161,7 +161,6 @@ def download_file(url, save_path):
         print(_('Create empty file'))
         file = open(save_path, 'w', encoding="utf-8")
         file.close()
-    pass
     print(_('File uploaded successfully in {directory}'.format(directory=save_path)))
 
 
@@ -171,7 +170,6 @@ def create_directory(path):
     except OSError:
         if not os.path.exists(path):
             print(_('Failed to create directory'))
-    pass
 
 
 gacha_path = path + '\\' + 'gacha'
