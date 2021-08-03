@@ -67,9 +67,11 @@ elif os.path.exists(file_path) and not os.path.exists(setting_path):  # settings
     f = open(file_path, 'r', encoding="utf-8")
     dirty_url = ''
     for line in f:
-        if re.search('OnGetWebViewPageFinish:', line):
-            if re.search('/log', line):
-                dirty_url = str(line)
+        if (
+            re.search('OnGetWebViewPageFinish:', line)
+            and re.search('/log', line)
+        ):
+            dirty_url = str(line)
     f.close()
     if dirty_url != '':
         url = dirty_url[23:-6]
@@ -103,9 +105,11 @@ elif os.path.exists(file_path) and os.path.exists(setting_path):  # оба фа�
     dirty_url = ''
     try:
         for line in f:
-            if re.search('OnGetWebViewPageFinish:', line):
-                if re.search('/log', line):
-                    dirty_url = str(line)
+            if (
+                re.search('OnGetWebViewPageFinish:', line)
+                and re.search('/log', line)
+            ):
+                dirty_url = str(line)
     except:
         pass
     f.close()
